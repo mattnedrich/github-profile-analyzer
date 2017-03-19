@@ -6,7 +6,10 @@ import { Provider } from 'react-redux';
 import App from './components/app';
 import updateState from './reducers/index';
 
-const store = createStore(updateState);
+const store = createStore(
+  updateState,
+  (window as any).__REDUX_DEVTOOLS_EXTENSION__  && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDom.render(
   <Provider store={store}>

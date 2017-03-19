@@ -1,11 +1,6 @@
 import * as ActionTypes from '../action-types/index';
 
-export type UpdateGreetingAction = {
-  type: ActionTypes.UPDATE_GREETING,
-  greeting: string
+export type FetchUserProfile = {
+  type: ActionTypes.START_FETCH_USER_PROFILE,
+  username: string
 }
-
-export type IncrementAction = {
-  type: ActionTypes.INCREMENT
-}
-

@@ -1,11 +1,11 @@
-class ApplicationState {
-  greeting: string
-  count: number;
-
-  constructor(greeting: string = 'React-TypeScript-Redux Example', count: number = 0) {
-    this.greeting = greeting;
-    this.count = count;
-  }
+export type ApplicationState = {
+  username: string | undefined,
+  fetchingUserProfile: boolean
 }
 
-export default ApplicationState;
+const applicationState: ApplicationState  = {
+  username: null,
+  fetchingUserProfile: false
+};
+
+export default applicationState;

@@ -1,43 +1,41 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import ApplicationState from '../application-state';
+import { ApplicationState } from '../application-state';
 import * as ActionCreators from '../action-creators/index';
 
-interface GreetingProps {greeting: string, store: any, updateGreeting: any};
+interface GreetingProps {fetchUserProfile: any};
 
 class Greeting extends React.Component<GreetingProps, any> {
   refs: {
-    greetingInputRef: HTMLInputElement;
+    usernameInputRef: HTMLInputElement;
   }
 
   constructor() {
     super();
-    this.updateGreetingAction = this.updateGreetingAction.bind(this);
+    this.fetchUserProfile = this.fetchUserProfile.bind(this);
   }
 
-  updateGreetingAction() {
-    this.props.updateGreeting(this.refs.greetingInputRef.value);
+  fetchUserProfile() {
+    this.props.fetchUserProfile(this.refs.usernameInputRef.value);
   }
 
   render() {
     return (
       <div>
-        <h1> {this.props.greeting} </h1>
-        <input ref="greetingInputRef" type="text"></input>
-        <button onClick={this.updateGreetingAction}>Update Greeting</button>
+        <h1>  </h1>
+        <input placeholder="Enter a GitHub Username" ref="usernameInputRef" type="text"></input>
+        <button onClick={this.fetchUserProfile}>Go</button>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state: ApplicationState) => {
-  return { greeting: state.greeting };
-}
+const mapStateToProps = (state: ApplicationState) => { return {}; }
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    updateGreeting: (newGreeting: string) => dispatch(ActionCreators.updateGreeting(newGreeting))
+    fetchUserProfile: (username: string) => dispatch(ActionCreators.fetchUserProfile(username))
   };
 }
 

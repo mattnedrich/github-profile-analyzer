@@ -1,15 +1,9 @@
 import * as ActionTypes from '../action-types/index';
 import * as Actions from '../actions/index';
 
-export const updateGreeting: (greeting: string) => Actions.UpdateGreetingAction = (greeting) => {
+export const fetchUserProfile: (username: string) => Actions.FetchUserProfile = (username) => {
   return {
-    type: ActionTypes.UPDATE_GREETING,
-    greeting: greeting
-  };
-}
-
-export const increment: () => Actions.IncrementAction = () => {
-  return {
-    type: ActionTypes.INCREMENT
+    type: ActionTypes.START_FETCH_USER_PROFILE,
+    username: username
   };
 }

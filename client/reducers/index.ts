@@ -1,22 +1,17 @@
-import ApplicationState from '../application-state';
+import applicationState from '../application-state';
 import * as ActionTypes from '../action-types/index';
 import * as Actions from '../actions/index';
 
-type Action = Actions.UpdateGreetingAction | Actions.IncrementAction;
+type Action = Actions.FetchUserProfile;
 
-const defaultState = new ApplicationState();
+const defaultState = applicationState;
 
-const updateState = (state: ApplicationState = defaultState, action: Action) => {
+const updateState = (state = defaultState, action: Action) => {
   switch(action.type) {
-  case ActionTypes.UPDATE_GREETING:
+  case ActionTypes.START_FETCH_USER_PROFILE:
     return {
-      greeting: action.greeting,
-      count: state.count
-    }
-  case ActionTypes.INCREMENT:
-    return {
-      greeting: state.greeting,
-      count: state.count + 1
+      username: state.username,
+      fetchingUserProfile: true
     }
   default:
     return state;
