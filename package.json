@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --content-base ./",
+    "build": "webpack ./webpack.config.js",
     "test": "jest"
   },
   "jest": {
@@ -21,16 +22,21 @@
     ]
   },
   "dependencies": {
+    "@types/jquery": "^2.0.41",
     "@types/react": "^15.0.14",
     "@types/react-dom": "^0.14.23",
     "@types/react-redux": "^4.4.37",
     "@types/redux": "^3.6.0",
+    "@types/redux-thunk": "^2.1.0",
+    "jquery": "^3.2.0",
     "lodash": "^4.17.4",
     "path": "^0.12.7",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
     "redux": "^3.6.0",
+    "redux-devtools-extension": "^2.13.0",
+    "redux-thunk": "^2.2.0",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
   },
