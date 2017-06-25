@@ -8,7 +8,7 @@ import EnterUsername from '../components/enter-username';
 class App extends React.Component<any, any> {
   render() {
     return (
-      <div>
+      <div id="app">
         <div style={{textAlign: 'center'}}>
           <EnterUsername />
         </div>
@@ -22,6 +22,14 @@ class App extends React.Component<any, any> {
             <div>Item 3</div>
             <div>Item 4</div>
           </div>
+        </div>
+        <div id="section1">
+          <div className="info">info 1</div>
+          <div className="info">info 2</div>
+          <div className="info">info 3</div>
+          <div className="info">info 4</div>
+          <div className="info">info 5</div>
+          <div className="info">info 6</div>
         </div>
       </div>
     );

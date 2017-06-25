@@ -1,31 +1,77 @@
 
 @import "./frameworks/bourbon/bourbon";
 @import "./frameworks/base/base";
+@import "./frameworks/neat/neat";
 
 body {
     margin: 0;
     padding: 0;
 }
 
+$grid: (
+    columns: 12,
+    gutter: 10px,
+    media: "(min-width: 1024px)",
+);
+
+$tablet-grid: (
+    columns: 12,
+    gutter: 10px,
+    media: "(max-width: 1024px)",
+);
+
+$mobile-grid: (
+    columns: 12,
+    gutter: 10px,
+    media: "(max-width: 768px)",
+);
+
+#app {
+    @include grid-container;
+}
+
 #profile {
     background: black;
     height: 500px;
-    display: flex;
 }
 
 #profile-photo {
-    width: 50%;
+    @include grid-media($grid) {
+        @include grid-column(6);
+    }
+
+    @include grid-media($tablet-grid) {
+        @include grid-column(6);
+    }
+
+    @include grid-media($mobile-grid) {
+        @include grid-column(12);
+    }
+
     height: 100%;
     background: red;
+
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #profile-details {
-    width: 50%;
+    @include grid-media($grid) {
+        @include grid-column(6);
+    }
+
+    @include grid-media($tablet-grid) {
+        @include grid-column(6);
+    }
+
+    @include grid-media($mobile-grid) {
+        @include grid-column(12);
+    }
+
     height: 100%;
     background: pink;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,4 +82,21 @@ body {
     background: yellow;
     height: 300px;
     width: 300px;
+}
+
+.info {
+    @include grid-media($grid) {
+        @include grid-column(4);
+    }
+
+    @include grid-media($tablet-grid) {
+        @include grid-column(6);
+    }
+
+    @include grid-media($mobile-grid) {
+        @include grid-column(12);
+    }
+    background: blue;
+    height: 300px;
+    margin-bottom: 10px
 }
