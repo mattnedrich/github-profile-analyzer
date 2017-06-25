@@ -5,6 +5,7 @@ import * as ActionCreators from '../action-creators/index';
 import EnterUsername from '../components/enter-username';
 
 import LanguageCard from '../components/language-card';
+import LanguageCards from '../containers/language-cards';
 import ProfileInfo from '../components/profile-info';
 import { GitHubRepository, ProgrammingLanguage } from '../types';
 
@@ -32,6 +33,8 @@ const sampleRepositories: GitHubRepository[] = [
     issueCount: 4,
     created: new Date(),
     modified: new Date(),
+    isFork: false,
+    language: sampleLanguages[0],
   },
   {
     name: 'foo',
@@ -41,6 +44,8 @@ const sampleRepositories: GitHubRepository[] = [
     issueCount: 4,
     created: new Date(),
     modified: new Date(),
+    isFork: false,
+    language: sampleLanguages[0],
   },
 ];
 
@@ -65,9 +70,7 @@ class App extends React.Component<any, any> {
           />
         </div>
         <div id="section1">
-          <LanguageCard language={sampleLanguages[0]} repositoryCount={3} mostPopular={sampleRepositories[0]} />
-          <LanguageCard language={sampleLanguages[1]} repositoryCount={10} mostPopular={sampleRepositories[1]} />
-          <LanguageCard language={sampleLanguages[2]} repositoryCount={1} mostPopular={sampleRepositories[0]} />
+          <LanguageCards />
         </div>
       </div>
     );

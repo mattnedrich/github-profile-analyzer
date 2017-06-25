@@ -17,6 +17,9 @@ sagaMiddleware.run(sagas);
 
 require('./styles/main.scss');
 
+import * as ActionCreators from './action-creators'
+store.dispatch(ActionCreators.startFetchUserProfile('mattnedrich'));
+
 ReactDom.render(
   <Provider store={store}>
     <App />

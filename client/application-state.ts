@@ -1,11 +1,17 @@
+import {GitHubUserProfile, GitHubRepository } from './types';
+
 export type ApplicationState = {
-  username: string | undefined,
+  user: GitHubUserProfile | undefined,
+  userRepos: GitHubRepository[] | undefined,
   fetchingUserProfile: boolean
+  fetchingUserRepos: boolean
 }
 
 const applicationState: ApplicationState  = {
-  username: null,
-  fetchingUserProfile: false
+  user: undefined,
+  userRepos: undefined,
+  fetchingUserProfile: false,
+  fetchingUserRepos: false,
 };
 
 export default applicationState;

@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@types/jquery": "^2.0.41",
+    "@types/lodash": "^4.14.66",
     "@types/react": "^15.0.14",
     "@types/react-dom": "^0.14.23",
     "@types/react-redux": "^4.4.37",
@@ -38,7 +39,8 @@
     "redux-devtools-extension": "^2.13.0",
     "redux-saga": "^0.15.4",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1"
+    "webpack-dev-server": "^2.4.1",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "@types/jest": "^18.1.1",

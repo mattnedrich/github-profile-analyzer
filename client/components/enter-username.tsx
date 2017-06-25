@@ -35,7 +35,7 @@ const mapStateToProps = (state: ApplicationState) => { return {}; }
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    fetchUserProfile: (username: string) => dispatch(ActionCreators.fetchUserProfile(username))
+    fetchUserProfile: (username: string) => dispatch(ActionCreators.startFetchUserProfile(username))
   };
 }
 
