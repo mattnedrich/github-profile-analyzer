@@ -7,6 +7,33 @@ body {
     padding: 0;
 }
 
-#profile-container{
-    /* background: black; */
+#profile {
+    background: black;
+    height: 500px;
+    display: flex;
+}
+
+#profile-photo {
+    width: 50%;
+    height: 100%;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile-details {
+    width: 50%;
+    height: 100%;
+    background: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#profile-photo-image {
+    background: yellow;
+    height: 300px;
+    width: 300px;
 }
