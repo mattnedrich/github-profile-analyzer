@@ -2,14 +2,14 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import * as ActionCreators from '../action-creators/index';
-import Greeting from './greeting'
+import EnterUsername from '../components/enter-username';
 
 
 class App extends React.Component<any, any> {
   render() {
     return (
       <div style={{textAlign: 'center'}}>
-        <Greeting />
+        <EnterUsername />
       </div>
     );
   }

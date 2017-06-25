@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { ApplicationState } from '../application-state';
 import * as ActionCreators from '../action-creators/index';
 
-interface GreetingProps {fetchUserProfile: any};
+interface EnterUsernameProps {fetchUserProfile: any};
 
-class Greeting extends React.Component<GreetingProps, any> {
+class EnterUsername extends React.Component<EnterUsernameProps, any> {
   refs: {
     usernameInputRef: HTMLInputElement;
   }
@@ -39,4 +39,4 @@ const mapDispatchToProps = (dispatch: any) => {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
+export default connect(mapStateToProps, mapDispatchToProps)(EnterUsername);
