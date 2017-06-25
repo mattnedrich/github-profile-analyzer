@@ -1,5 +1,6 @@
 
 @import "./frameworks/bourbon/bourbon";
+@import "./frameworks/base/base";
 
 body {
     margin: 0;
@@ -7,6 +8,5 @@ body {
 }
 
 #profile-container{
-    @include linear-gradient(#1e5799, #2989d8);
     /* background: black; */
 }
