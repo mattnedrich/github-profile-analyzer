@@ -8,8 +8,11 @@ import EnterUsername from '../components/enter-username';
 class App extends React.Component<any, any> {
   render() {
     return (
-      <div style={{textAlign: 'center'}}>
-        <EnterUsername />
+      <div>
+        <div id="profile-container">test</div>
+        <div style={{textAlign: 'center'}}>
+          <EnterUsername />
+        </div>
       </div>
     );
   }

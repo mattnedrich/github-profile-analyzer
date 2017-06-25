@@ -1,0 +1,12 @@
+
+@import "./frameworks/bourbon/bourbon";
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#profile-container{
+    @include linear-gradient(#1e5799, #2989d8);
+    /* background: black; */
+}

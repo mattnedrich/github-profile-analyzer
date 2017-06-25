@@ -15,6 +15,8 @@ import sagas from './sagas';
 
 sagaMiddleware.run(sagas);
 
+require('./styles/main.scss');
+
 ReactDom.render(
   <Provider store={store}>
     <App />
