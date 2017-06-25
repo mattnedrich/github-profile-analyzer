@@ -31,8 +31,7 @@ $mobile: (
 }
 
 #profile {
-    background: black;
-    height: 500px;
+    height: 350px;
 }
 
 #profile-photo {
@@ -49,11 +48,12 @@ $mobile: (
     }
 
     height: 100%;
-    background: red;
+    background: white;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    border-right: 1px solid grey;
 }
 
 #profile-details {
@@ -70,7 +70,7 @@ $mobile: (
     }
 
     height: 100%;
-    background: pink;
+    background: white;
 
     display: flex;
     justify-content: center;
@@ -84,7 +84,20 @@ $mobile: (
     width: 300px;
 }
 
-.info {
+#section1 {
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 40px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.language-info {
     @include grid-media($desktop) {
         @include grid-column(4);
     }
@@ -96,7 +109,82 @@ $mobile: (
     @include grid-media($mobile) {
         @include grid-column(12);
     }
-    background: blue;
+
+    border: 1px dashed grey;
     height: 300px;
     margin-bottom: 10px
+}
+
+.language-info-title {
+    height: 60px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-info-count {
+    height: 50px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-info-additional {
+    font-size: 16px;
+    color: black;
+
+    height: 50px;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.language-info-most-popular {
+}
+
+.language-info-most-popular-heading {
+    font-size: 14px;
+    color: grey;
+
+    display: flex;
+}
+
+.language-info-most-popular-name {
+    font-size: 20px;
+    color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-info-most-popular-description {
+    font-size: 14px;
+    color: grey;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-info-created {
+    font-size: 14px;
+    color: grey;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-info-modified {
+    font-size: 14px;
+    color: grey;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
