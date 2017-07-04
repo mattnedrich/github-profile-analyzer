@@ -1,16 +1,11 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
 
-import * as ActionCreators from '../action-creators/index';
 import EnterUsername from '../components/enter-username';
-
 import UserPhoto from '../containers/user-photo';
 import UserProfile from '../containers/user-profile';
-import LanguageCard from '../components/language-card';
 import LanguageCards from '../containers/language-cards';
-import { GitHubRepository, ProgrammingLanguage } from '../types';
 
-class App extends React.Component<any, any> {
+class App extends React.Component<{}, {}> {
   render() {
     return (
       <div id="app">
