@@ -9,46 +9,6 @@ import LanguageCards from '../containers/language-cards';
 import ProfileInfo from '../components/profile-info';
 import { GitHubRepository, ProgrammingLanguage } from '../types';
 
-const sampleLanguages: ProgrammingLanguage[] = [
-  {
-    displayName: "JavaScript",
-    id: 1,
-  },
-  {
-    displayName: "Python",
-    id: 2,
-  },
-  {
-    displayName: "Ruby",
-    id: 3,
-  },
-];
-
-const sampleRepositories: GitHubRepository[] = [
-  {
-    name: 'foo',
-    description: 'bar',
-    starCount: 1,
-    forkCount: 2,
-    issueCount: 4,
-    created: new Date(),
-    modified: new Date(),
-    isFork: false,
-    language: sampleLanguages[0],
-  },
-  {
-    name: 'foo',
-    description: 'bar',
-    starCount: 1,
-    forkCount: 2,
-    issueCount: 4,
-    created: new Date(),
-    modified: new Date(),
-    isFork: false,
-    language: sampleLanguages[0],
-  },
-];
-
 class App extends React.Component<any, any> {
   render() {
     return (
@@ -63,10 +23,10 @@ class App extends React.Component<any, any> {
           <ProfileInfo
               reposAuthored={10}
               reposForked={20}
-              mostUsedLanguage={sampleLanguages[0]}
-              mostStarredRepo={sampleRepositories[0]}
-              mostForkedRepo={sampleRepositories[0]}
-              newestRepo={sampleRepositories[0]}
+              mostUsedLanguage={undefined}
+              mostStarredRepo={undefined}
+              mostForkedRepo={undefined}
+              newestRepo={undefined}
           />
         </div>
         <div id="section1">

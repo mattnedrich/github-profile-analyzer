@@ -13,15 +13,21 @@ export interface Props{
 
 export default class ProfileInfo extends React.Component<Props, any> {
   render() {
-  console.log(this.props);
+    const reposAuthored = this.props.reposAuthored || 0;
+    const reposForked = this.props.reposForked || 0;
+    const mostPopularLanguage = this.props.mostUsedLanguage ? this.props.mostUsedLanguage.displayName : "";
+    const mostStarredRepository = this.props.mostStarredRepo ? this.props.mostStarredRepo.name : "";
+    const mostForkedRepository = this.props.mostForkedRepo ? this.props.mostForkedRepo.name : "";
+    const newestRepository = this.props.newestRepo ? this.props.newestRepo.name : "";
+
     return (
       <div id="profile-details">
-        <div>{this.props.reposAuthored} Repositories Authored</div>
-        <div>{this.props.reposForked} Repositories Forked</div>
-        <div>Most Popular Language: {this.props.mostUsedLanguage.displayName}</div>
-        <div>Most Starred Repository: {this.props.mostStarredRepo.name}</div>
-        <div>Most Forked Repository: {this.props.mostForkedRepo.name}</div>
-        <div>Most Recent Repository: {this.props.newestRepo.name}</div>
+        <div>{reposAuthored} Repositories Authored</div>
+        <div>{reposForked} Repositories Forked</div>
+        <div>Most Popular Language: {mostPopularLanguage}</div>
+        <div>Most Starred Repository: {mostStarredRepository}</div>
+        <div>Most Forked Repository: {mostForkedRepository}</div>
+        <div>Most Recent Repository: {newestRepository}</div>
       </div>
     );
   }
