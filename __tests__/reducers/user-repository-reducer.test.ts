@@ -1,5 +1,13 @@
 import updateState from '../../client/reducers/user-repository-reducer';
-import { userCreatedReposByLanguage } from '../../client/reducers/user-repository-reducer';
+import {
+  userCreatedReposByLanguage,
+  repositoryAuthoredCount,
+  repositoryForkedCount,
+  mostPopularLanguage,
+  mostStarredRepository,
+  mostForkedRepository,
+  newestRepository,
+} from '../../client/reducers/user-repository-reducer';
 import * as ActionCreators from '../../client/action-creators';
 import { GitHubRepository } from '../../client/types';
 import { ApplicationState } from '../../client/application-state';
@@ -32,6 +40,61 @@ const fetchingAppStateWithExistingRepos: any = {
 
 
 describe('UserRepositoryReducer', () => {
+
+  describe('for the mattnedrich user', () => {
+    let reduxState: ApplicationState;
+    let repos: GitHubRepository[];
+
+    beforeEach(() => {
+      reduxState = {} as any;
+      repos = gitHubResultToLocalTypeMapper(mattNedrichRepos);
+      expect(repos.length).toEqual(27);
+      reduxState.userRepos = repos;
+    });
+
+    describe('.repositoryAuthoredCount', () => {
+      it('returns the correct number of repositories', () => {
+        const repoCount = repositoryAuthoredCount(reduxState);
+        expect(repoCount).toEqual(25);
+      });
+    });
+
+    describe('.repositoryForkedCount', () => {
+      it('returns the correct number of repositories', () => {
+        const repoCount = repositoryForkedCount(reduxState);
+        expect(repoCount).toEqual(2);
+      });
+    });
+
+    describe('.mostPopularLanguage', () => {
+      it('returns the correct language', () => {
+        const result = mostPopularLanguage(reduxState);
+        expect(result.displayName).toEqual("Python");
+      });
+    });
+
+    describe('.mostStarredRepository', () => {
+      it('returns the correct repository', () => {
+        const result = mostStarredRepository(reduxState);
+        expect(result.name).toEqual("GradientDescentExample");
+      });
+    });
+
+    describe('.mostForkedRepository', () => {
+      it('returns the correct repository', () => {
+        const result = mostForkedRepository(reduxState);
+        expect(result.name).toEqual("GradientDescentExample");
+      });
+    });
+
+    describe('.newestRepository', () => {
+      it('returns the correct repository', () => {
+        const result = newestRepository(reduxState);
+        expect(result.name).toEqual("react-redux-typescript");
+      });
+    });
+
+  });
 
   describe('.userCreatedReposByLanguage', () => {
     describe('for the mattnedrich user', () => {

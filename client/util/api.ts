@@ -3,20 +3,35 @@ import { GitHubRepository, GitHubUserProfile } from '../types';
 async function fetchUserProfile(username: string): Promise<GitHubUserProfile | undefined> {
   const result = await fetch(`https://api.github.com/users/${username}`);
   const jsonResult = await result.json();
-  const profile = {
-    username: jsonResult.login,
-    name: jsonResult.name,
-    location: jsonResult.location,
-    description: jsonResult.bio,
-    company: jsonResult.company,
-    website: jsonResult.blog,
-    profileImageUrl: jsonResult.avatar_url,
-  }
-  return profile as GitHubUserProfile;
+  return gitHubUserResultToLocalTypeMapper(jsonResult);
+}
+
+async function fetchUserRepositories(username: string): Promise<GitHubRepository[] | undefined> {
+  const result = await fetch(`https://api.github.com/users/${username}/repos`);
+  const jsonResult = await result.json();
+  const repos = gitHubResultToLocalTypeMapper(jsonResult);
+  console.log(repos);
+  return repos as GitHubRepository[];
+}
+
+export const Api = {
+  fetchUserProfile,
+  fetchUserRepositories,
+};
+
+export function gitHubUserResultToLocalTypeMapper(userResult: any): GitHubUserProfile {
+  return {
+    username: userResult.login,
+    name: userResult.name,
+    location: userResult.location,
+    description: userResult.bio,
+    company: userResult.company,
+    website: userResult.blog,
+    profileImageUrl: userResult.avatar_url,
+  };
 }
 
 export function gitHubResultToLocalTypeMapper(results: any): GitHubRepository[] {
-  console.log(results.length);
   return results.map((result: any) => {
     return {
       name: result.name,
@@ -34,15 +49,3 @@ export function gitHubResultToLocalTypeMapper(results: any): GitHubRepository[] 
     }
   });
 }
-async function fetchUserRepositories(username: string): Promise<GitHubRepository[] | undefined> {
-  const result = await fetch(`https://api.github.com/users/${username}/repos`);
-  const jsonResult = await result.json();
-  const repos = gitHubResultToLocalTypeMapper(jsonResult);
-  console.log(repos);
-  return repos as GitHubRepository[];
-}
-
-export const Api = {
-  fetchUserProfile,
-  fetchUserRepositories,
-};

@@ -1,3 +1,4 @@
+import {ApplicationState} from '../application-state';
 import applicationState from '../application-state';
 import * as ActionTypes from '../action-types/index';
 import * as Actions from '../actions/index';
@@ -72,6 +73,84 @@ function getMostPopularRepository(repos: GitHubRepository[]): GitHubRepository {
   return _.maxBy(repos, (repo: GitHubRepository) => { return repo.starCount; });
 }
 
+function getMostForkedRepository(repos: GitHubRepository[]): GitHubRepository {
+  return _.maxBy(repos, (repo: GitHubRepository) => { return repo.forkCount; });
+}
+
+function getNewestRepository(repos: GitHubRepository[]): GitHubRepository {
+  return _.maxBy(repos, (repo: GitHubRepository) => { return repo.created; });
+}
+
 function removeForks(repos: GitHubRepository[]): GitHubRepository[] {
   return _.filter(repos, (repo) => { return !repo.isFork; })
+}
+
+function userAuthoredRepos(state: ApplicationState): GitHubRepository[] {
+  if (state.userRepos) {
+    return removeForks(state.userRepos);
+  } else {
+    return [];
+  }
+}
+
+export function repositoryAuthoredCount(state: ApplicationState): number {
+  if (state.userRepos) {
+    return userAuthoredRepos(state).length;
+  } else {
+    return 0;
+  }
+}
+
+export function repositoryForkedCount(state: ApplicationState): number {
+  if (state.userRepos) {
+    return _.filter(state.userRepos, (repo) => { return repo.isFork;}).length;
+  } else {
+    return 0;
+  }
+}
+
+const UnknownLanguage: ProgrammingLanguage = {
+  displayName: "Unknown",
+  id: 0,
+};
+
+export function mostPopularLanguage(state: ApplicationState): ProgrammingLanguage {
+  if (state.userRepos) {
+    const userRepos = userAuthoredRepos(state);
+    const groups = groupByLanguage(userRepos) as any;
+    const mostPopularLanguageInfo = _.chain(Object.keys(groups))
+      .map((key) => {
+        return {
+          language: groups[key][0].language as ProgrammingLanguage,
+          count: groups[key].length as number,
+        }
+      })
+      .sortBy((info) => { return info.count})
+      .reverse()
+      .value();
+    return _.head(mostPopularLanguageInfo).language;
+  } else {
+    return UnknownLanguage;
+  }
+}
+
+export function mostStarredRepository(state: ApplicationState): GitHubRepository | undefined {
+  if (state.userRepos) {
+    const userRepos = userAuthoredRepos(state);
+    return getMostPopularRepository(userRepos);
+  }
+}
+
+export function mostForkedRepository(state: ApplicationState): GitHubRepository | undefined {
+  if (state.userRepos) {
+    const userRepos = userAuthoredRepos(state);
+    return getMostForkedRepository(userRepos);
+  }
+}
+
+export function newestRepository(state: ApplicationState): GitHubRepository | undefined {
+  if (state.userRepos) {
+    const userRepos = userAuthoredRepos(state);
+    return getNewestRepository(userRepos);
+  }
 }
