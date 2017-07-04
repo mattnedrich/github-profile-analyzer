@@ -16,16 +16,21 @@ class EnterUsername extends React.Component<EnterUsernameProps, any> {
     this.fetchUserProfile = this.fetchUserProfile.bind(this);
   }
 
-  fetchUserProfile() {
+  fetchUserProfile(event: any) {
+    event.preventDefault();
     this.props.fetchUserProfile(this.refs.usernameInputRef.value);
   }
 
   render() {
     return (
       <div>
-        <h1>  </h1>
-        <input placeholder="Enter a GitHub Username" ref="usernameInputRef" type="text"></input>
-        <button onClick={this.fetchUserProfile}>Go</button>
+        <form onSubmit={this.fetchUserProfile} >
+          <input
+              placeholder="Enter a GitHub Username"
+              ref="usernameInputRef"
+              type="text">
+          </input>
+        </form>
       </div>
     );
   }
