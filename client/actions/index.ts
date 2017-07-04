@@ -33,3 +33,10 @@ export type FetchUserRepositoriesFailed = {
   type: ActionTypes.FETCH_USER_REPOSITORIES_FAILED,
   error: string
 }
+
+export type AnyAction = StartFetchUserProfile
+  | FetchUserProfileSuccess
+  | FetchUserProfileFailed
+  | StartFetchUserRepositories
+  | FetchUserRepositoriesSuccess
+  | FetchUserRepositoriesFailed

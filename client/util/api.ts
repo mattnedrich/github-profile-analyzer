@@ -15,10 +15,9 @@ async function fetchUserProfile(username: string): Promise<GitHubUserProfile | u
   return profile as GitHubUserProfile;
 }
 
-async function fetchUserRepositories(username: string): Promise<GitHubRepository[] | undefined> {
-  const result = await fetch(`https://api.github.com/users/${username}/repos`);
-  const jsonResult = await result.json();
-  const repos = jsonResult.map((result: any) => {
+export function gitHubResultToLocalTypeMapper(results: any): GitHubRepository[] {
+  console.log(results.length);
+  return results.map((result: any) => {
     return {
       name: result.name,
       description: result.description,
@@ -34,6 +33,11 @@ async function fetchUserRepositories(username: string): Promise<GitHubRepository
       }
     }
   });
+}
+async function fetchUserRepositories(username: string): Promise<GitHubRepository[] | undefined> {
+  const result = await fetch(`https://api.github.com/users/${username}/repos`);
+  const jsonResult = await result.json();
+  const repos = gitHubResultToLocalTypeMapper(jsonResult);
   console.log(repos);
   return repos as GitHubRepository[];
 }

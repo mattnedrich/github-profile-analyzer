@@ -13,8 +13,8 @@ export default class LanguageCards extends React.Component<Props, any> {
   render() {
 
     const cards = this.props.languageCards.map((card: LanguageCardProps) => {
-      const key = `card_${card.language}_${card.mostPopular.name}`;
-      return (<LanguageCard key={key} language={card.language} repositoryCount={card.repositoryCount} mostPopular={card.mostPopular} />);
+      const key = `card_${card.language}_${card.mostPopularRepository.name}`;
+      return (<LanguageCard key={key} language={card.language} repositoryCount={card.repositoryCount} mostPopularRepository={card.mostPopularRepository} />);
     });
 
     return (

@@ -7,33 +7,17 @@ import LanguageCardsComponent from '../components/language-cards';
 import { Props as LanguageCardsProps } from '../components/language-cards';
 
 import { GitHubRepository } from '../types/';
+import { userCreatedReposByLanguage } from '../reducers/user-repository-reducer';
 
 type StateProps = LanguageCardsProps;
 
 import * as _ from 'lodash';
 
-function groupByLanguage(repos: GitHubRepository[]): {string: GitHubRepository[]} {
-  const groups = _.groupBy(repos, (repo) => {return repo.language.displayName});
-  console.log(groups);
-  return groups as {string: GitHubRepository[]};
-}
-function getMostPopularRepository(repos: GitHubRepository[]): GitHubRepository {
-  return repos[0];
-}
-
 function mapStateToProps(state: ApplicationState): StateProps {
   if(state.userRepos) {
-    const groups = groupByLanguage(state.userRepos) as any;
-    const displayRepos = Object.keys(groups).map((languageKey: string) => {
-      return {
-        language: groups[languageKey][0].language,
-        repositoryCount: groups[languageKey].length,
-        mostPopular: groups[languageKey][0],
-      }
-    });
-
+    const languageCards = userCreatedReposByLanguage(state.userRepos);
     return {
-      languageCards: displayRepos,
+      languageCards: languageCards,
     };
   } else {
     return {languageCards: []};

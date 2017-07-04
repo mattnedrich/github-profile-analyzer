@@ -30,3 +30,10 @@ export function fetchUserRepositoriesSuccess(repositories: GitHubRepository[]): 
     repositories,
   };
 }
+
+export function fetchUserRepositoriesFailed(error: string): Actions.FetchUserRepositoriesFailed {
+  return {
+    type: ActionTypes.FETCH_USER_REPOSITORIES_FAILED,
+    error,
+  };
+}
