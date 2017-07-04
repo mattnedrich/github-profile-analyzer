@@ -11,7 +11,7 @@ export interface Props{
   newestRepo: GitHubRepository,
 };
 
-export default class ProfileInfo extends React.Component<Props, any> {
+export default class UserProfile extends React.Component<Props, any> {
   render() {
     const reposAuthored = this.props.reposAuthored || 0;
     const reposForked = this.props.reposForked || 0;
