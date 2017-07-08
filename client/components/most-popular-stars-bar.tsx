@@ -15,15 +15,15 @@ export default class MostPopularStarsBar extends React.Component<Props, any> {
       <div className="language-info-additional">
         <div className="left-icon">
           <i className="fa fa-star"></i>
-          <div className="language-info-additional-stars">{this.props.repository.starCount}</div>
+          <div>{this.props.repository.starCount}</div>
         </div>
         <div className="left-icon">
           <i className="fa fa-code-fork"></i>
-          <div className="language-info-additional-forks">{this.props.repository.forkCount}</div>
+          <div>{this.props.repository.forkCount}</div>
         </div>
         <div className="left-icon">
           <i className="fa fa-exclamation-circle"></i>
-          <div className="language-info-additional-forks">{this.props.repository.issueCount}</div>
+          <div>{this.props.repository.issueCount}</div>
         </div>
       </div>
     );

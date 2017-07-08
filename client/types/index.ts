@@ -20,5 +20,6 @@ export interface GitHubRepository {
   modified: Date,
   isFork: boolean,
   language: ProgrammingLanguage,
+  url: string,
 }
 

@@ -44,6 +44,7 @@ export function gitHubResultToLocalTypeMapper(results: any): GitHubRepository[] 
       modified: new Date(result.updated_at),
       isFork: result.fork,
       language: createFromGitHubName(result.language),
+      url: result.html_url,
     }
   });
 }

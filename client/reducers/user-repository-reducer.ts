@@ -43,7 +43,7 @@ export default function updateState(state = defaultState, action: Actions.AnyAct
 interface RepoGroupByLanguage {
   language: ProgrammingLanguage,
   repositoryCount: number,
-  mostPopularRepository: GitHubRepository,
+  mostPopularRepositories: GitHubRepository[],
 };
 
 export function userCreatedReposByLanguage(userRepos: GitHubRepository[]): RepoGroupByLanguage[] {
@@ -54,7 +54,7 @@ export function userCreatedReposByLanguage(userRepos: GitHubRepository[]): RepoG
     return {
       language: groups[languageKey][0].language,
       repositoryCount: groups[languageKey].length,
-      mostPopularRepository: getMostPopularRepository(groups[languageKey]),
+      mostPopularRepositories: getMostPopularRepositories(groups[languageKey]),
     };
   });
 
@@ -70,8 +70,12 @@ function groupByLanguage(repos: GitHubRepository[]): {string: GitHubRepository[]
   return groups as {string: GitHubRepository[]};
 }
 
-function getMostPopularRepository(repos: GitHubRepository[]): GitHubRepository {
-  return _.maxBy(repos, (repo: GitHubRepository) => { return repo.starCount; });
+function getMostPopularRepositories(repos: GitHubRepository[]): GitHubRepository[] {
+  return _.chain(repos)
+    .sortBy((repo: GitHubRepository) => { return repo.starCount; })
+    .reverse()
+    .take(3)
+    .value();
 }
 
 function getMostForkedRepository(repos: GitHubRepository[]): GitHubRepository {
@@ -133,7 +137,7 @@ export function mostPopularLanguage(state: ApplicationState): ProgrammingLanguag
 export function mostStarredRepository(state: ApplicationState): GitHubRepository | undefined {
   if (state.userRepos) {
     const userRepos = userAuthoredRepos(state);
-    return getMostPopularRepository(userRepos);
+    return getMostPopularRepositories(userRepos)[0];
   }
 }
 

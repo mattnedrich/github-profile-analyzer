@@ -9,21 +9,36 @@ import MostPopularStarsBar from './most-popular-stars-bar';
 export interface Props {
   language: ProgrammingLanguage,
   repositoryCount: number,
-  mostPopularRepository: GitHubRepository
+  mostPopularRepositories: GitHubRepository[]
 };
 
 export default class LanguageCard extends React.Component<Props, any> {
+
+  getRepositoryMarkup(repo: GitHubRepository) {
+    return (
+      <div>
+          <MostPopularHeader repository={repo} />
+          <MostPopularStarsBar repository={repo} />
+          {/* <div className="language-info-created">Created {repo.created.toString()}</div>
+              <div className="language-info-modified">Last Updated: {repo.modified.toString()}</div> */}
+      </div>
+    );
+  }
+
   render() {
-  console.log(this.props);
+    const popularReposMarkup = this.props.mostPopularRepositories.map((repo: GitHubRepository) => {
+      return this.getRepositoryMarkup(repo);
+    });
+
     return (
       <div className="language-info">
         <LanguageHeader language={this.props.language} repositoryCount={this.props.repositoryCount} />
         <div className="language-info-most-popular">
-          <MostPopularHeader repository={this.props.mostPopularRepository} />
-          <div className="language-info-most-popular-description">{this.props.mostPopularRepository.description}</div>
-          <MostPopularStarsBar repository={this.props.mostPopularRepository} />
-          <div className="language-info-created">Created {this.props.mostPopularRepository.created.toString()}</div>
-          <div className="language-info-modified">Last Updated: {this.props.mostPopularRepository.modified.toString()}</div>
+          <div className="language-info-most-popular-meta">
+            <i className="devicon-git-plain"></i>
+            <div className="language-info-most-popular-text">Most Popular</div>
+          </div>
+          { popularReposMarkup }
         </div>
       </div>
     );

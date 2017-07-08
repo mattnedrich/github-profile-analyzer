@@ -27,8 +27,8 @@ export const UnknownLanguage: ProgrammingLanguage = {
 };
 
 export function createFromGitHubName(gitHubName: string): ProgrammingLanguage {
-  console.log(gitHubName);
-  switch(gitHubName.toLowerCase()) {
+  const name = gitHubName || "Something Undefined";
+  switch(name.toLowerCase()) {
   case 'c':
     return {
       name: "C",

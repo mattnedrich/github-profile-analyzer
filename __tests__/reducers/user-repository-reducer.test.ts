@@ -116,14 +116,14 @@ describe('UserRepositoryReducer', () => {
         expect(groupedRepos[6].language.displayName).toEqual('Ruby');
         expect(groupedRepos[7].language.displayName).toEqual('C++');
 
-        expect(groupedRepos[0].mostPopularRepository.name).toEqual('GradientDescentExample');
-        expect(groupedRepos[1].mostPopularRepository.name).toEqual('swift-type-inference-bug');
-        expect(groupedRepos[2].mostPopularRepository.name).toEqual('algorithms');
-        expect(groupedRepos[3].mostPopularRepository.name).toEqual('palette-maker');
-        expect(groupedRepos[4].mostPopularRepository.name).toEqual('rickshaw_examples');
-        expect(groupedRepos[5].mostPopularRepository.name).toEqual('react-redux-typescript');
-        expect(groupedRepos[6].mostPopularRepository.name).toEqual('ruby-excel-library-examples');
-        expect(groupedRepos[7].mostPopularRepository.name).toEqual('MeanShift_cpp');
+        expect(groupedRepos[0].mostPopularRepositories[0].name).toEqual('GradientDescentExample');
+        expect(groupedRepos[1].mostPopularRepositories[0].name).toEqual('swift-type-inference-bug');
+        expect(groupedRepos[2].mostPopularRepositories[0].name).toEqual('tools');
+        expect(groupedRepos[3].mostPopularRepositories[0].name).toEqual('palette-maker');
+        expect(groupedRepos[4].mostPopularRepositories[0].name).toEqual('rickshaw_examples');
+        expect(groupedRepos[5].mostPopularRepositories[0].name).toEqual('react-redux-typescript');
+        expect(groupedRepos[6].mostPopularRepositories[0].name).toEqual('ruby-excel-library-examples');
+        expect(groupedRepos[7].mostPopularRepositories[0].name).toEqual('MeanShift_cpp');
       });
     })
   });
