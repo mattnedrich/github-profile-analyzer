@@ -1,3 +1,5 @@
+import { ProgrammingLanguage } from './programming-language';
+
 export interface GitHubUserProfile {
   username: string,
   name: string,
@@ -20,7 +22,3 @@ export interface GitHubRepository {
   language: ProgrammingLanguage,
 }
 
-export interface ProgrammingLanguage {
-  displayName: string,
-  id: number
-}

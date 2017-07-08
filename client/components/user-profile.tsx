@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { GitHubRepository, ProgrammingLanguage } from '../types/';
+import { GitHubRepository } from '../types/';
+import { ProgrammingLanguage } from '../types/programming-language';
 
 export interface Props{
   reposAuthored: number,

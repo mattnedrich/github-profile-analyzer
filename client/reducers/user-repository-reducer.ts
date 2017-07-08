@@ -2,7 +2,8 @@ import {ApplicationState} from '../application-state';
 import applicationState from '../application-state';
 import * as ActionTypes from '../action-types/index';
 import * as Actions from '../actions/index';
-import { GitHubRepository, ProgrammingLanguage } from '../types';
+import { GitHubRepository } from '../types';
+import { ProgrammingLanguage, UnknownLanguage } from '../types/programming-language';
 import * as _ from 'lodash';
 
 const defaultState = applicationState;
@@ -108,11 +109,6 @@ export function repositoryForkedCount(state: ApplicationState): number {
     return 0;
   }
 }
-
-const UnknownLanguage: ProgrammingLanguage = {
-  displayName: "Unknown",
-  id: 0,
-};
 
 export function mostPopularLanguage(state: ApplicationState): ProgrammingLanguage {
   if (state.userRepos) {

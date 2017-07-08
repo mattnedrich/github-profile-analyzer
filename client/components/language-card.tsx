@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { GitHubRepository, ProgrammingLanguage } from '../types/';
+import { GitHubRepository } from '../types/';
+import { ProgrammingLanguage } from '../types/programming-language';
+import LanguageHeader from './language-header';
 
 export interface Props {
   language: ProgrammingLanguage,
@@ -13,8 +15,7 @@ export default class LanguageCard extends React.Component<Props, any> {
   console.log(this.props);
     return (
       <div className="language-info">
-        <div className="language-info-title">{this.props.language.displayName}</div>
-        <div className="language-info-count">{this.props.repositoryCount} Repositories</div>
+        <LanguageHeader language={this.props.language} repositoryCount={this.props.repositoryCount} />
         <div className="language-info-most-popular">
           <div className="language-info-most-popular-heading">Most Popular</div>
           <div className="language-info-most-popular-name">{this.props.mostPopularRepository.name}</div>

@@ -1,4 +1,5 @@
 import { GitHubRepository, GitHubUserProfile } from '../types';
+import { createFromGitHubName } from '../types/programming-language';
 
 async function fetchUserProfile(username: string): Promise<GitHubUserProfile | undefined> {
   const result = await fetch(`https://api.github.com/users/${username}`);
@@ -42,10 +43,7 @@ export function gitHubResultToLocalTypeMapper(results: any): GitHubRepository[] 
       created: new Date(result.created_at),
       modified: new Date(result.updated_at),
       isFork: result.fork,
-      language: {
-        displayName: result.language,
-        id: 0,
-      }
+      language: createFromGitHubName(result.language),
     }
   });
 }

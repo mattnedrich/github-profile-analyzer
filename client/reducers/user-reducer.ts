@@ -1,5 +1,6 @@
 import { ApplicationState } from '../application-state';
-import { ProgrammingLanguage, GitHubRepository } from '../types';
+import { GitHubRepository } from '../types';
+import { ProgrammingLanguage } from '../types/programming-language';
 import applicationState from '../application-state';
 import * as ActionTypes from '../action-types/index';
 import * as Actions from '../actions/index';

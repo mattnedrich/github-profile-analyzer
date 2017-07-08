@@ -4,6 +4,7 @@
 @import "./frameworks/neat/neat";
 
 body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -117,18 +118,39 @@ $mobile: (
 
 .language-info-title {
     height: 60px;
-    border: 1px solid red;
+    display: flex;
+    border-bottom: 1px solid gray;
+}
+
+.language-info-title-middle {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.language-info-title-icon {
+    padding-left: 15px;
+    margin-top: -4px;
+    font-size: 50px;
+    vertical-align: middle;
+}
+
+.language-info-title-text {
+    font-size:25px;
+    padding-right: 50px;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .language-info-count {
-    height: 50px;
-    border: 1px solid red;
+    padding-right: 50px;
+    height: 30px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: top;
+    color: grey;
 }
 
 .language-info-additional {
