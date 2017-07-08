@@ -14,7 +14,7 @@ export type LanguageName = "C" | "C_PLUS_PLUS" | "C_SHARP" | "CLOJURE" | "COFFES
   | "JAVA" | "JAVASCRIPT"
   | "OBJECTIVE_C"
   | "PERL" | "PHP" | "PYTHON"
-  | "RUBY"
+  | "RUBY" | "RUST"
   | "SHELL" | "SWIFT" | "SCALA"
   | "TYPESCRIPT"
   | "UNKNOWN";
@@ -154,6 +154,13 @@ export function createFromGitHubName(gitHubName: string): ProgrammingLanguage {
       iconName: "icon-ruby",
       gitHubName: "ruby",
       displayName: "Ruby"
+    };
+  case 'rust':
+    return {
+      name: "RUST",
+      iconName: "icon-rust",
+      gitHubName: "rust",
+      displayName: "Rust"
     };
   case 'shell':
     return {
