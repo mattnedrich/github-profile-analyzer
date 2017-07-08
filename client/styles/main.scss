@@ -153,45 +153,59 @@ $mobile: (
     color: grey;
 }
 
-.language-info-additional {
-    font-size: 16px;
-    color: black;
+.language-info-most-popular-header {
+    flex-direction: column;
+    margin-top: 10px;
+    font-size: 12px;
+    color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.language-info-most-popular-name {
+    font-size: 20px;
+    display: flex;
+}
+
+.language-info-most-popular-meta {
+    display: flex;
+}
+
+.language-info-most-popular-meta i {
+    margin-top: 2px;
+    padding-right: 5px;
+}
+
+.language-info-most-popular-description {
+    font-size: 14px;
+    color: grey;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.language-info-additional {
+    font-size: 20px;
+    color: black;
     height: 50px;
-    border: 1px solid red;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
 
-.language-info-most-popular {
-}
-
-.language-info-most-popular-heading {
-    font-size: 14px;
-    color: grey;
-
+.language-info-additional-stars {
     display: flex;
 }
 
-.language-info-most-popular-name {
+.language-info-additional.left-icon.i {
+    display: flex;
     font-size: 20px;
-    color: black;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.language-info-most-popular-description {
-    font-size: 14px;
-    color: grey;
-
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-right: 5px;
 }
 
 .language-info-created {
@@ -209,5 +223,17 @@ $mobile: (
 
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.data-item-icon {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 55px;
+}
+
+.left-icon {
+    display: flex;
+    flex-direction: row;
     align-items: center;
 }
