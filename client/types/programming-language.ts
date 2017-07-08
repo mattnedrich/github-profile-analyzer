@@ -165,7 +165,7 @@ export function createFromGitHubName(gitHubName: string): ProgrammingLanguage {
   case 'swift':
     return {
       name: "SWIFT",
-      iconName: "devicon-apple-original colored devicon-sourced",
+      iconName: "devicon-swift-plain",
       gitHubName: "swift",
       displayName: "Swift"
     };
