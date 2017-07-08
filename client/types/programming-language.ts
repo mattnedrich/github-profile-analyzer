@@ -184,6 +184,11 @@ export function createFromGitHubName(gitHubName: string): ProgrammingLanguage {
       displayName: "TypeScript"
     };
   default:
-    return UnknownLanguage;
+    return {
+      name: "UNKNOWN",
+      gitHubName: gitHubName,
+      iconName: "icon-script",
+      displayName: gitHubName,
+    };
   }
 }
