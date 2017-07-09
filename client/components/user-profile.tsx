@@ -14,6 +14,10 @@ export interface Props{
 
 export default class UserProfile extends React.Component<Props, any> {
   render() {
+    if(!this.props.reposAuthored) {
+      return null;
+    }
+
     const reposAuthored = this.props.reposAuthored || 0;
     const reposForked = this.props.reposForked || 0;
     const mostPopularLanguage = this.props.mostUsedLanguage ? this.props.mostUsedLanguage.displayName : "";
