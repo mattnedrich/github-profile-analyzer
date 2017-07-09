@@ -1,7 +1,7 @@
 import { GitHubRepository, GitHubUserProfile } from '../types';
 import { createFromGitHubName } from '../types/programming-language';
 
-const RUN_LOCALLY = false;
+const RUN_LOCALLY = true;
 import { mattnedrich as profile } from '../../test_fixtures/users/mattnedrich';
 import { mattNedrichRepos } from '../../test_fixtures/repos/mattnedrich';
 

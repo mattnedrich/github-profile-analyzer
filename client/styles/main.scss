@@ -253,6 +253,22 @@ $mobile: (
     color: #3572A5;
 }
 
+.icon-haskell {
+    color: #666666;
+}
+
+.icon-clojure {
+    color: #63B132;
+}
+
+.icon-rust {
+    color: #000000;
+}
+
+.icon-scala {
+    color: #DE322F;
+}
+
 .devicon-swift-plain {
     color: #FF4F2D;
 }
@@ -322,4 +338,14 @@ $mobile: (
 .profile-details-item {
     font-weight: bold;
     font-size: 20px;
+}
+
+#langs {
+    i {
+        margin-right: 4px;
+        margin-left: 4px;
+    }
+    font-size: 40px;
+    background: aliceblue;
+    border-bottom: 1px solid lightgray;
 }

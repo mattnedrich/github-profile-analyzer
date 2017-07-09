@@ -20,6 +20,30 @@ export type LanguageName = "C" | "C_PLUS_PLUS" | "C_SHARP" | "CLOJURE" | "COFFES
   | "TYPESCRIPT"
   | "UNKNOWN";
 
+export const All: ProgrammingLanguage[] = [
+  createFromGitHubName("c"),
+  createFromGitHubName("c++"),
+  createFromGitHubName("c#"),
+  createFromGitHubName("clojure"),
+  createFromGitHubName("coffeescript"),
+  createFromGitHubName("css"),
+  createFromGitHubName("elm"),
+  createFromGitHubName("go"),
+  createFromGitHubName("haskell"),
+  createFromGitHubName("html"),
+  createFromGitHubName("java"),
+  createFromGitHubName("javascript"),
+  createFromGitHubName("objective-c"),
+  createFromGitHubName("perl"),
+  createFromGitHubName("php"),
+  createFromGitHubName("python"),
+  createFromGitHubName("ruby"),
+  createFromGitHubName("rust"),
+  createFromGitHubName("swift"),
+  createFromGitHubName("scala"),
+  createFromGitHubName("typescript"),
+];
+
 export const UnknownLanguage: ProgrammingLanguage = {
   name: "UNKNOWN",
   gitHubName: "unknown",
@@ -154,7 +178,7 @@ export function createFromGitHubName(gitHubName: string): ProgrammingLanguage {
   case 'php':
     return {
       name: "PHP",
-      iconName: "icon-php",
+      iconName: "devicon-php-plain colored",
       gitHubName: "php",
       displayName: "PHP"
     };
