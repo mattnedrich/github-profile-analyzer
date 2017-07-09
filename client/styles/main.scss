@@ -288,3 +288,27 @@ $mobile: (
     margin-top: 10px;
     width: 75%;
 }
+
+// Profile Details
+
+#profile-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-detail-item-with-icon {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.profile-detail-item-with-icon i {
+    margin-right: 15px;
+    font-size: 40px;
+}
+
+.profile-details-item {
+    font-weight: bold;
+    font-size: 20px;
+}
