@@ -6,9 +6,11 @@
   "author": "Matt Nedrich",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --content-base ./",
-    "build": "webpack ./webpack.config.js",
-    "test": "jest"
+    "build": "webpack ./webpack.config.js && cp index.* dist/",
+    "dev": "webpack-dev-server --content-base ./dist",
+    "test": "jest",
+    "start": "node ./index.js",
+    "start:debug": "DEBUG=express:* node ./index.js"
   },
   "jest": {
     "transform": {
@@ -29,6 +31,7 @@
     "@types/react-redux": "^4.4.37",
     "@types/redux": "^3.6.0",
     "@types/redux-saga": "^0.10.5",
+    "express": "^4.15.3",
     "jquery": "^3.2.0",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
