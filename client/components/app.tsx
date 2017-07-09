@@ -17,9 +17,9 @@ class App extends React.Component<{}, {}> {
     return (
       <div id="app">
         <EnterUsername />
-        <div id="langs">
-          {langs}
-        </div>
+        {/* <div id="langs">
+            {langs}
+            </div> */}
         <div id="profile">
           <UserPhoto />
           <UserProfile />
