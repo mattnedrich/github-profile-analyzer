@@ -1,18 +1,32 @@
 import { GitHubRepository, GitHubUserProfile } from '../types';
 import { createFromGitHubName } from '../types/programming-language';
 
+const RUN_LOCALLY = true;
+import { mattnedrich as profile } from '../../test_fixtures/users/mattnedrich';
+import { mattNedrichRepos } from '../../test_fixtures/repos/mattnedrich';
+
 async function fetchUserProfile(username: string): Promise<GitHubUserProfile | undefined> {
-  const result = await fetch(`https://api.github.com/users/${username}`);
-  const jsonResult = await result.json();
-  return gitHubUserResultToLocalTypeMapper(jsonResult);
+  if(RUN_LOCALLY) {
+    const jsonResult = profile ;
+    return gitHubUserResultToLocalTypeMapper(jsonResult);
+  } else {
+    const result = await fetch(`https://api.github.com/users/${username}`);
+    const jsonResult = await result.json();
+    return gitHubUserResultToLocalTypeMapper(jsonResult);
+  }
 }
 
 async function fetchUserRepositories(username: string): Promise<GitHubRepository[] | undefined> {
-  const result = await fetch(`https://api.github.com/users/${username}/repos`);
-  const jsonResult = await result.json();
-  const repos = gitHubResultToLocalTypeMapper(jsonResult);
-  console.log(repos);
-  return repos as GitHubRepository[];
+  if(RUN_LOCALLY) {
+    const jsonResult = mattNedrichRepos;
+    const repos = gitHubResultToLocalTypeMapper(jsonResult);
+    return repos as GitHubRepository[];
+  } else {
+    const result = await fetch(`https://api.github.com/users/${username}/repos`);
+    const jsonResult = await result.json();
+    const repos = gitHubResultToLocalTypeMapper(jsonResult);
+    return repos as GitHubRepository[];
+  }
 }
 
 export const Api = {

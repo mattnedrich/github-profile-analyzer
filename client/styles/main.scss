@@ -171,7 +171,7 @@ $mobile: (
 }
 
 .language-info-most-popular-header-date {
-    font-size: 14px;
+    font-size: 12px;
     padding-right: 25px;
 }
 
@@ -248,4 +248,43 @@ $mobile: (
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.icon-python {
+    color: #3572A5;
+}
+
+.devicon-swift-plain {
+    color: #FF4F2D;
+}
+
+.icon-csharp {
+    color: #6A1577;
+}
+
+.icon-javascript {
+    // handled in icon class
+}
+
+.devicon-typescript-plain {
+    color: #2B7489;
+}
+
+.icon-ruby {
+    color: #AC1301;
+}
+
+// Enter Username
+
+#enter-username-bar {
+    height: 80px;
+    background: #2D2F39;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#enter-username-bar-form {
+    margin-top: 10px;
+    width: 75%;
 }

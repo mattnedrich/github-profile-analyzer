@@ -9,9 +9,7 @@ class App extends React.Component<{}, {}> {
   render() {
     return (
       <div id="app">
-        <div style={{textAlign: 'center'}}>
-          <EnterUsername />
-        </div>
+        <EnterUsername />
         <div id="profile">
           {/* <UserPhoto /> */}
           <UserProfile />

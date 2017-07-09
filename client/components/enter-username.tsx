@@ -23,8 +23,8 @@ class EnterUsername extends React.Component<EnterUsernameProps, any> {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.fetchUserProfile} >
+      <div id="enter-username-bar">
+        <form id="enter-username-bar-form" onSubmit={this.fetchUserProfile} >
           <input
               placeholder="Enter a GitHub Username"
               ref="usernameInputRef"

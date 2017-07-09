@@ -1,4 +1,4 @@
-export const mattNedrichRepos = [
+export const mattNedrichRepos: any = [
   {
     "id": 16678274,
     "name": "algorithms",

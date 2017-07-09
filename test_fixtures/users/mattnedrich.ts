@@ -1,4 +1,4 @@
-export const mattnedrich = {
+export const mattnedrich: any = {
   "login": "mattnedrich",
   "id": 4796480,
   "avatar_url": "https://avatars1.githubusercontent.com/u/4796480?v=3",
