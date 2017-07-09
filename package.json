@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack ./webpack.config.js && cp index.* dist/",
+    "heroku-postbuild": "webpack ./webpack.config.js && cp index.* dist/",
     "dev": "webpack-dev-server --content-base ./dist",
     "test": "jest",
     "start": "node ./index.js",
