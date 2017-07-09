@@ -54,7 +54,6 @@ $mobile: (
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid grey;
 }
 
 #profile-details {
@@ -80,7 +79,7 @@ $mobile: (
 }
 
 #profile-photo-image {
-    background: yellow;
+    background: white;
     height: 300px;
     width: 300px;
 }
@@ -258,10 +257,6 @@ $mobile: (
     color: #FF4F2D;
 }
 
-.icon-csharp {
-    color: #6A1577;
-}
-
 .icon-javascript {
     // handled in icon class
 }
@@ -272,6 +267,22 @@ $mobile: (
 
 .icon-ruby {
     color: #AC1301;
+}
+
+.icon-perl {
+    color: #0294C3;
+}
+
+.icon-c {
+    color: #596FC5;
+}
+
+.icon-css {
+    color: #1572B6;
+}
+
+.icon-objc {
+    color: #37ABFF;
 }
 
 // Enter Username

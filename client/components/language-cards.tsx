@@ -12,7 +12,6 @@ export interface Props {
 
 export default class LanguageCards extends React.Component<Props, any> {
   render() {
-    console.log(this.props.languageCards);
     const cards = this.props.languageCards.map((card: LanguageCardProps) => {
       const key = `card_${card.language}_${card.mostPopularRepositories[0].name}`;
       return (

@@ -9,7 +9,6 @@ export interface Props {
 
 export default class UserPhoto extends React.Component<Props, any> {
   render() {
-  console.log(this.props);
     return (
       <div id="profile-photo">
         <div id="profile-photo-image"><img src={this.props.photoUrl} /></div>

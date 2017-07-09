@@ -54,7 +54,7 @@ export function createFromGitHubName(gitHubName: string): ProgrammingLanguage {
   case 'c#':
     return {
       name: "C_SHARP",
-      iconName: "icon-csharp",
+      iconName: "devicon-csharp-plain colored",
       gitHubName: "csharp",
       displayName: "C#"
     };
@@ -124,7 +124,7 @@ export function createFromGitHubName(gitHubName: string): ProgrammingLanguage {
   case 'java':
     return {
       name: "JAVA",
-      iconName: "icon-java",
+      iconName: "devicon-java-plain colored",
       gitHubName: "java",
       displayName: "Java"
     };
@@ -211,7 +211,7 @@ export function createFromGitHubName(gitHubName: string): ProgrammingLanguage {
     return {
       name: "UNKNOWN",
       gitHubName: languageName,
-      iconName: "icon-script",
+      iconName: "devicon-devicon-plain",
       displayName: languageName,
     };
   }

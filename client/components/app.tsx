@@ -11,7 +11,7 @@ class App extends React.Component<{}, {}> {
       <div id="app">
         <EnterUsername />
         <div id="profile">
-          {/* <UserPhoto /> */}
+          <UserPhoto />
           <UserProfile />
         </div>
         <div id="section1">
