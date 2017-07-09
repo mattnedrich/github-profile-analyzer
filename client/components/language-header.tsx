@@ -10,7 +10,6 @@ export interface Props {
 
 export default class LanguageHeader extends React.Component<Props, any> {
   render() {
-  console.log(this.props);
     return (
       <div className="language-info-title">
         <span className="language-info-title-icon ">

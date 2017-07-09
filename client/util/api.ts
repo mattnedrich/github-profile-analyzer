@@ -33,6 +33,7 @@ export function gitHubUserResultToLocalTypeMapper(userResult: any): GitHubUserPr
 }
 
 export function gitHubResultToLocalTypeMapper(results: any): GitHubRepository[] {
+  console.log(results);
   return results.map((result: any) => {
     return {
       name: result.name,

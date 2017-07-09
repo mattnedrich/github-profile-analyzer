@@ -16,11 +16,9 @@ export default class LanguageCard extends React.Component<Props, any> {
 
   getRepositoryMarkup(repo: GitHubRepository) {
     return (
-      <div>
+      <div key={`repo-${this.props.language.name}-${repo.name}`}>
           <MostPopularHeader repository={repo} />
           <MostPopularStarsBar repository={repo} />
-          {/* <div className="language-info-created">Created {repo.created.toString()}</div>
-              <div className="language-info-modified">Last Updated: {repo.modified.toString()}</div> */}
       </div>
     );
   }
@@ -32,7 +30,10 @@ export default class LanguageCard extends React.Component<Props, any> {
 
     return (
       <div className="language-info">
-        <LanguageHeader language={this.props.language} repositoryCount={this.props.repositoryCount} />
+        <LanguageHeader
+            language={this.props.language}
+            repositoryCount={this.props.repositoryCount}
+        />
         <div className="language-info-most-popular">
           <div className="language-info-most-popular-meta">
             <i className="devicon-git-plain"></i>

@@ -10,7 +10,6 @@ export interface Props {
 
 export default class MostPopularStarsBar extends React.Component<Props, any> {
   render() {
-  console.log(this.props);
     return (
       <div className="language-info-additional">
         <div className="left-icon">

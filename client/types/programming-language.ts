@@ -6,12 +6,13 @@ export interface ProgrammingLanguage {
 }
 
 export type LanguageName = "C" | "C_PLUS_PLUS" | "C_SHARP" | "CLOJURE" | "COFFESCRIPT" | "CSS"
-  | "EMACS_LISP"
+  | "ELM" | "EMACS_LISP"
   | "F_SHARP"
   | "GO"
   | "HASKELL"
   | "HTML"
   | "JAVA" | "JAVASCRIPT"
+  | "NONE"
   | "OBJECTIVE_C"
   | "PERL" | "PHP" | "PYTHON"
   | "RUBY" | "RUST"
@@ -26,9 +27,16 @@ export const UnknownLanguage: ProgrammingLanguage = {
   displayName: "Script"
 };
 
+export const NoLanguage: ProgrammingLanguage = {
+  name: "NONE",
+  gitHubName: null,
+  iconName: "devicon-devicon-plain",
+  displayName: "No Language"
+}
+
 export function createFromGitHubName(gitHubName: string): ProgrammingLanguage {
-  const name = gitHubName || "Something Undefined";
-  switch(name.toLowerCase()) {
+  const languageName = gitHubName || "NONE";
+  switch(languageName.toLowerCase()) {
   case 'c':
     return {
       name: "C",
@@ -78,6 +86,13 @@ export function createFromGitHubName(gitHubName: string): ProgrammingLanguage {
       gitHubName: "emacs lisp",
       displayName: "Emacs Lisp"
     };
+  case 'elm':
+    return {
+      name: "ELM",
+      iconName: "icon-elm",
+      gitHubName: "elm",
+      displayName: "Elm"
+    };
   case 'f#':
     return {
       name: "F_SHARP",
@@ -120,6 +135,8 @@ export function createFromGitHubName(gitHubName: string): ProgrammingLanguage {
       gitHubName: "javascript",
       displayName: "JavaScript"
     };
+  case 'none':
+    return NoLanguage;
   case 'objective-c':
     return {
       name: "OBJECTIVE_C",
@@ -193,9 +210,9 @@ export function createFromGitHubName(gitHubName: string): ProgrammingLanguage {
   default:
     return {
       name: "UNKNOWN",
-      gitHubName: gitHubName,
+      gitHubName: languageName,
       iconName: "icon-script",
-      displayName: gitHubName,
+      displayName: languageName,
     };
   }
 }
